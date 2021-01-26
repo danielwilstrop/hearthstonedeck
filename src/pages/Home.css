@@ -1,0 +1,43 @@
+html, body {
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.home-body {
+    height: 100vh;
+    width: 100vw;
+    background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)
+    ),url('../resources/hsbackground.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 768px){
+    .home-body {
+        background:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)
+        ),url('../resources/hssmallscreenbackground.jpg');
+        background-position: center;
+    }
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 0;
+   
+}
+
+.main-logo {
+    width: 60vw;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+}
