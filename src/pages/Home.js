@@ -33,7 +33,6 @@ export const Home = () => {
                     Authorization: `Bearer ${accessToken}`
                 }})
             const data = await response.json()
-            console.log(data)
             const {cards} = data
             if (cards){
                 const newCards = cards.map((card) => {

@@ -1,20 +1,13 @@
 import React from 'react'
 import './CardList.css'
 import { Loading } from './Loading'
-import { CardModal } from '../components/CardModal'
+import { Image } from './Image'
 
 
 export const CardList = (props) => {
-    const handleClick = (e) => {
-        e.preventDefault()
-        return (
-            <CardModal cards = {props.cards} />
-        )
-    }
-
     if (props.loading){
         return (
-                <Loading />
+            <Loading />
         )}
 
     if (props.cards.length < 1){
@@ -27,10 +20,9 @@ export const CardList = (props) => {
   
     return (
         <div className = 'card-list'>
-            <CardModal cards = {props.cards} />
            {props.cards.map((card) => {
                return (
-                        <img src = {card.image} alt = {card.name} className = 'list-image' key = {card.id} onClick = {handleClick} />
+                   <Image card = {card} key = {card.id} />  
                )
            })}
         </div>

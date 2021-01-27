@@ -31,7 +31,7 @@ export const SearchBar = (props) => {
             onChange = {handleChange} />
             <div className = 'search-buttons'>
                 <input type = 'submit' className = 'button-search' onClick = {handleClickWild} value = 'Wild Cards' />
-                <input type = 'submit' className = 'button-search' onClick = {handleClickStandard} value = 'Standard Cards' />
+                <input type = 'submit' className = 'button-search' onClick = {handleClickStandard} value = 'Standard Set' />
             </div>
         </form>
     )
