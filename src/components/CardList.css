@@ -30,6 +30,11 @@
     transition: transform 0.3s ease-out;
 }
 
+.sorry {
+    color: rgb(191, 149, 83);
+    margin: 1rem;
+}
+
 
 
 @media screen and (max-width: 768px) {

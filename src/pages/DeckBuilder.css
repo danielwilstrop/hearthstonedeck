@@ -2,3 +2,10 @@ html {
     height: 100vj;
     width: 100vw;
 }
+
+.coming-soon {
+    margin-top: 10rem;
+    font-size: 3rem;
+    text-align: center;
+    color: rgb(191, 149, 83);
+}

@@ -12,9 +12,13 @@
     font-size: 1.5rem;
     transition: all 0.30s ease-in-out;
     outline: none;
-    margin-bottom: 1.8rem;
+    margin-bottom: 0rem;
     padding: 3px 0px 3px 3px;
     border: 1px solid #DDDDDD;
+}
+
+.search-buttons {
+    display: flex;
 }
 
 .input-search:focus {
@@ -32,6 +36,7 @@
        background-color: rgb(102, 54, 157);
        color:rgb(209, 235, 65);
        letter-spacing: 0.3rem;
+       margin: 1rem;
 }
 
 .button-search:hover {

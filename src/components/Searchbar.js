@@ -1,5 +1,5 @@
 import './SearchBar.css'
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect } from 'react'
 
 export const SearchBar = (props) => {
     const searchBox = useRef('')
@@ -8,9 +8,14 @@ export const SearchBar = (props) => {
         searchBox.current.focus()
     }, [])
 
-    const handleClick = (e) => {
+    const handleClickWild = (e) => {
         e.preventDefault()
-        props.getCards()
+        props.getCardsWild()
+    }
+
+    const handleClickStandard = (e) => {
+        e.preventDefault()
+        props.getCardsStandard()
     }
 
     const handleChange = (e) => {
@@ -24,7 +29,10 @@ export const SearchBar = (props) => {
             placeholder = 'Search for Cards by Name...'
             ref = {searchBox} 
             onChange = {handleChange} />
-            <input type = 'submit' className = 'button-search' onClick = {handleClick} value = 'Search' />
+            <div className = 'search-buttons'>
+                <input type = 'submit' className = 'button-search' onClick = {handleClickWild} value = 'Wild Cards' />
+                <input type = 'submit' className = 'button-search' onClick = {handleClickStandard} value = 'Standard Cards' />
+            </div>
         </form>
     )
 }
