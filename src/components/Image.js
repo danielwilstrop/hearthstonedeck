@@ -6,15 +6,17 @@ export const Image = (props) => {
 
     const handleClick = (e) => {
         setShowModal(true)
+        document.body.style.position = 'fixed'
     }
 
     const closeModal = () => {
         setShowModal(false)
+        document.body.style.position = ''
     }
 
     if (showModal) {
         return (
-            <CardModal card = {props.card} onClose = {closeModal} />
+                <CardModal card = {props.card} onClose = {closeModal} /> 
         )
     }
 

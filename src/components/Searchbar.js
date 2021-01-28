@@ -10,16 +10,19 @@ export const SearchBar = (props) => {
 
     const handleClickWild = (e) => {
         e.preventDefault()
-        props.getCardsWild()
+        props.setWild('')
+        props.setHasSearched(true)
     }
 
     const handleClickStandard = (e) => {
         e.preventDefault()
-        props.getCardsStandard()
+        props.setWild('&set=standard')
+        props.setHasSearched(true)
     }
 
     const handleChange = (e) => {
         props.setSearchTerm(e.target.value)
+        props.setWild('')
     }
 
     return (

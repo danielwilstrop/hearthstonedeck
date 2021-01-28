@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Home.css'
 import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/Searchbar'
@@ -10,7 +10,14 @@ export const Home = () => {
         const [cards, setCards] = useState([])
         const [loading, setLoading] = useState(false)
         const [hasSearched, setHasSearched] = useState(false)
+        const [wild, setWild] = useState('')
         let accessToken;
+
+        useEffect(() => {
+            if(hasSearched){
+                getCards()
+            }
+        }, [wild])
     
         const getToken = async() => {
             try {
@@ -23,59 +30,21 @@ export const Home = () => {
             } 
         }
     
-        const getCardsStandard = async() => {
+        const getCards = async() => {
             setHasSearched(false)
             setLoading(true)
             try {
                 await getToken()
-                const response = await fetch(`https://eu.api.blizzard.com/hearthstone/cards/?collectible=1&set=standard&textFilter=${searchTerm}&locale=en-US$access_token=${accessToken}`, {
+                const response = await fetch(`https://eu.api.blizzard.com/hearthstone/cards/?collectible=1${wild}&textFilter=${searchTerm}&locale=en-US$access_token=${accessToken}`, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`
                 }})
             const data = await response.json()
             const {cards} = data
-            if (cards){
-                const newCards = cards.map((card) => {
-                  const {artistName, cropImage, id, image, imageGold, attack, health, manaCost, classId, name, rarityId} = card
-                    return {
-                        id: id,
-                        name: name,
-                        attack: attack,
-                        health: health,
-                        mana: manaCost,
-                        image: image,
-                        goldImage: imageGold,
-                        cutImage: cropImage,
-                        class: classId,
-                        artist: artistName,
-                        rarity: rarityId
-                    }  
-                })
-                setCards(newCards)
-                setLoading(false)
-                setHasSearched(true)
-            }
-            } catch (error) {
-                console.log(error)
-                setLoading(false)
-            } 
-        }
-
-        const getCardsWild = async() => {
-            setHasSearched(false)
-            setLoading(true)
-            try {
-                await getToken()
-                const response = await fetch(`https://eu.api.blizzard.com/hearthstone/cards/?collectible=1&textFilter=${searchTerm}&locale=en-US$access_token=${accessToken}`, {
-                headers: {
-                    Authorization: `Bearer ${accessToken}`
-                }})
-            const data = await response.json()
             console.log(data)
-            const {cards} = data
             if (cards){
                 const newCards = cards.map((card) => {
-                  const {artistName, cropImage, id, image, imageGold, attack, health, manaCost, classId, name, rarityId} = card
+                  const {artistName, cropImage, id, image, imageGold, flavorText, attack, health, manaCost, classId, name, rarityId} = card
                     return {
                         id: id,
                         name: name,
@@ -87,6 +56,7 @@ export const Home = () => {
                         cutImage: cropImage,
                         class: classId,
                         artist: artistName,
+                        text: flavorText,
                         rarity: rarityId
                     }  
                 })
@@ -107,12 +77,15 @@ export const Home = () => {
                 <img src = {logo} alt = 'HSlogo' className = 'main-logo' />
                 <div className = 'area'>
                     <div className = 'bubble'>
-                        <p className = 'intro-text'> Use the searchbar to serach any card in hearthstone, either by 'Standard Sets' or wild cards.  Click on the cards for more
-                            <span className = 'text-fix'>_</span> information and to add to your deck.  Head to deckbuider to view your deck, make changes and see your collection!
+                        <p className = 'intro-text'> Welcome to the Hearthstone Deckbuilder, powered by Blizzards own game data. Use the searchbar to search any card in hearthstone, either by 'Standard Sets' or wild cards.  Click on the cards for more
+                             information and to add to your deck or click on a class button to filter cards by their class. Head to deckbuider to view your deck, make changes and see your collection! 
                         </p>
                     </div>
                 </div>
-                <SearchBar getCardsWild = {getCardsWild} getCardsStandard = {getCardsStandard} setSearchTerm = {setSearchTerm} />
+                <SearchBar  getCards = {getCards}
+                            setWild = {setWild}
+                            setSearchTerm = {setSearchTerm}
+                            setHasSearched = {setHasSearched} />
                 <CardList  cards = {cards} loading = {loading} hasSearched = {hasSearched} searchTerm = {searchTerm} /> 
             </div>
         </div>  

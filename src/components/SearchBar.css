@@ -28,7 +28,7 @@
 }
 
 .button-search{
-       font-size: 1.4rem;
+       font-size: 1rem;
        width: 22vw;
        height: 2.8rem;
        border-radius: 10px;
@@ -48,14 +48,15 @@
 }
 
 @media screen and (max-width: 768px){
+    .button-search{
+        letter-spacing: normal;
+        font-size: 0.8rem !important;
+        width: 40vw !important;
+    }
+
     .input-search, 
     .button-search {
         font-size: 1rem;
-        
-    }
-
-    .button-search {
-        width: 8rem;
     }
 }
 
