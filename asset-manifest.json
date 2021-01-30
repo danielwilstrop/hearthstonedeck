@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/hearthstonedeck/static/css/main.7ab7d373.chunk.css",
+    "main.js": "/hearthstonedeck/static/js/main.a69c48f6.chunk.js",
+    "main.js.map": "/hearthstonedeck/static/js/main.a69c48f6.chunk.js.map",
+    "runtime-main.js": "/hearthstonedeck/static/js/runtime-main.6349160f.js",
+    "runtime-main.js.map": "/hearthstonedeck/static/js/runtime-main.6349160f.js.map",
+    "static/js/2.2a7a0f8d.chunk.js": "/hearthstonedeck/static/js/2.2a7a0f8d.chunk.js",
+    "static/js/2.2a7a0f8d.chunk.js.map": "/hearthstonedeck/static/js/2.2a7a0f8d.chunk.js.map",
+    "index.html": "/hearthstonedeck/index.html",
+    "static/css/main.7ab7d373.chunk.css.map": "/hearthstonedeck/static/css/main.7ab7d373.chunk.css.map",
+    "static/js/2.2a7a0f8d.chunk.js.LICENSE.txt": "/hearthstonedeck/static/js/2.2a7a0f8d.chunk.js.LICENSE.txt",
+    "static/media/Attack.2d188e45.png": "/hearthstonedeck/static/media/Attack.2d188e45.png",
+    "static/media/HSlogo.c6d9eed8.png": "/hearthstonedeck/static/media/HSlogo.c6d9eed8.png",
+    "static/media/HSwordlogo.c882678e.png": "/hearthstonedeck/static/media/HSwordlogo.c882678e.png",
+    "static/media/App.css": "/hearthstonedeck/static/media/Raleway-Black.eef1ff81.ttf",
+    "static/media/health.22749e36.png": "/hearthstonedeck/static/media/health.22749e36.png",
+    "static/media/Home.css": "/hearthstonedeck/static/media/hssmallscreenbackground.dcad22e0.jpg",
+    "static/media/mana.20bbacf7.png": "/hearthstonedeck/static/media/mana.20bbacf7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6349160f.js",
+    "static/js/2.2a7a0f8d.chunk.js",
+    "static/css/main.7ab7d373.chunk.css",
+    "static/js/main.a69c48f6.chunk.js"
+  ]
+}
