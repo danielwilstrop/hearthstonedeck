@@ -15,9 +15,11 @@ export const CardList = (props) => {
     }
 
     if (!props.searchTerm){
+        props.setCards([])
         return <h1 className = 'sorry' > Please enter a search term </h1>
     }
-  
+
+    if (props.searchTerm){
     return (
         <div className = 'card-list'>
            {props.cards.map((card) => {
@@ -27,4 +29,5 @@ export const CardList = (props) => {
            })}
         </div>
     )
+    }
 }

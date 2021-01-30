@@ -45,12 +45,24 @@ button {
 .intro-text {
     font-size: 1.45rem;
     color: rgb(191, 149, 83);
-    text-justify: center;
-    width: 80vw;
     margin: 3rem;
     margin-top: -1rem;
+    display: table-cell;
+    vertical-align: center;
+    text-align: center;
 }
 
-.text-fix {
-    visibility: hidden;
+
+.area {
+    position: relative;
+    width: 70vw;
+    margin-top: -2.95rem;
+    margin-bottom: 10rem;
 }
+
+.bubble {
+    display: table;
+    position: absolute;
+}
+
+

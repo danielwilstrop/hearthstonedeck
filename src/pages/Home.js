@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './Home.css'
 import { NavBar } from '../components/NavBar'
 import { SearchBar } from '../components/Searchbar'
@@ -13,12 +13,6 @@ export const Home = () => {
         const [wild, setWild] = useState('')
         let accessToken;
 
-        useEffect(() => {
-            if(hasSearched){
-                getCards()
-            }
-        }, [wild])
-    
         const getToken = async() => {
             try {
                 const response = await fetch(`https://eu.battle.net/oauth/token?client_id=a569196e691a46268cc45bfdf10f17a6&client_secret=IyXkzOP4X7WQGUmpiltYV3oc2DduokWK&grant_type=client_credentials`)
@@ -85,8 +79,13 @@ export const Home = () => {
                 <SearchBar  getCards = {getCards}
                             setWild = {setWild}
                             setSearchTerm = {setSearchTerm}
-                            setHasSearched = {setHasSearched} />
-                <CardList  cards = {cards} loading = {loading} hasSearched = {hasSearched} searchTerm = {searchTerm} /> 
+                            setHasSearched = {setHasSearched}
+                             />
+                <CardList   cards = {cards}
+                            loading = {loading}
+                            hasSearched = {hasSearched}
+                            searchTerm = {searchTerm}
+                            setCards = {setCards} /> 
             </div>
         </div>  
     )
