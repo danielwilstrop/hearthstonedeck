@@ -10,6 +10,8 @@ There is  a lot of data in hearthstone so future functinality may be added, such
 
 Made with React and no libaries, using external css as oppossed to css-in-JS
 
+Live Site: https://danielwilstrop.github.io/hearthstonedeck/
+
 
 
 
